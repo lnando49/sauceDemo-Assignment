@@ -6,8 +6,15 @@ import Page from './page.js';
  */
 class LoginPage extends Page {
     standardLogin = "standard_user"
-    passwordStandard = "secret_sauce"
-    users = ["standard_user", "problem_user", "error_user", "visual_user"]
+   passwordStandard = "secret_sauce" 
+    // users = ["standard_user", "problem_user", "error_user", "visual_user"]
+      credentials = { 
+        users: ["standard_user", "problem_user", "error_user", "visual_user"],
+        password: "secret_sauce"
+      }
+    
+
+
     /**
      * define selectors using getter methods
      */

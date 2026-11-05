@@ -5,13 +5,15 @@ import SecurePage from '../pageobjects/secure.page.js'
 describe('My Login application', () => {
     it('should login with valid credentials', async () => {
 
-        for (let i = 0; i < LoginPage.users.length; i++) {
+        for (let i = 0; i < LoginPage.credentials.users.length; i++) {
            
 
             await LoginPage.open();
-            await LoginPage.login(LoginPage.users[i], LoginPage.passwordStandard);
+            await LoginPage.login(LoginPage.credentials.users[i], LoginPage.credentials.password);
+
             await expect(browser).toHaveUrl('https://www.saucedemo.com/inventory.html')
             await expect($('.title')).toHaveText('Products');
+            await browser.pause(3000);
         }
         // await LoginPage.open();
 
