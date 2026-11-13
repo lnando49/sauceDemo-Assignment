@@ -9,9 +9,12 @@ class LoginPage extends Page {
 //    passwordStandard = "secret_sauce" 
     // users = ["standard_user", "problem_user", "error_user", "visual_user"]
       credentials = { 
-        users: ["standard_user", "problem_user", "error_user", "visual_user"],
+        users: ["standard_user", "visual_user", "problem_user", "error_user", "locked_out_user", "performance_glitch_user"],
         password: "secret_sauce"
       }
+    get errorMsg () {
+        return $('.error-message-container')
+    }
     
      get headerName () {
         return $('.title')
@@ -46,7 +49,7 @@ class LoginPage extends Page {
      * overwrite specific options to adapt it to page object
      */
     open () {
-        return super.open('login');
+        return super.open('');
     }
 }
 
